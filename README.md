@@ -29,8 +29,34 @@
 `git reset HEAD file`  //将暂存区的修改撤销掉,重新放回工作区(回退版本)
 `git reflog` // 查找你曾输入的每一次命令(关于设置版本号的命令)
 
-## 工作去和暂存区
+## 5. 工作去和暂存区
 啊哈哈哈!!!自行百度去吧!不做解释,本文档仅用于万一你忘了某天命令!
+
+## 6. 删除文件和恢复文件
+`git rm readme.md` //删除readme.md文件  
+`git checkout -- readme.md` //让readme.md文件回到最近一次 `git add`或`git commit`的状态    
+
+***
+# 生成SSH key及访问Github
+
+1. `ls -al ~/.ssh` 检查SSH key 是否存在
+	*  存在:
+		* `pbcopy < ~/.ssh/id_rsa.pub` 复制id_rsa.pub里的内容
+		* 然后打开github将id_rsa.pub里的内容放入Key
+	* 不存在:
+		* `ssh-keygen -t rsa -C "your_email@example.com"` //生成新的SSH key
+		* 都是开源的文件,一路回车即可.
+2. `ssh git@github.com` //检测SSH key是否可以访问Github   
+
+# 添加远程仓库
+1. `git remote add origin https://github.com/JimL007(你的账户名)/learngit(仓库名).git 
+`  将当前仓库与git仓库链接(在你的本地仓库下执行)
+2. `git remote rm origin` 移出链接
+3. `git push -u origin master`第一次推动master分支要使用该命令
+4. `git push origin master` 将本地master分支推送到github
+
+# 从远程仓库克隆
+1. `git clone https://github.com/JimL007/gitskills.git` 克隆你的仓库
 
 
 
