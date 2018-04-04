@@ -46,6 +46,8 @@
 	* 不存在:
 		* `ssh-keygen -t rsa -C "your_email@example.com"` //生成新的SSH key
 		* 都是开源的文件,一路回车即可.
+		* `pbcopy < ~/.ssh/id_rsa.pub` 复制id_rsa.pub里的内容
+		* 然后打开github将id_rsa.pub里的内容放入Key
 2. `ssh git@github.com` //检测SSH key是否可以访问Github   
 
 # 添加远程仓库
